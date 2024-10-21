@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "brawlhalla-ping-checker", "brawlhalla-ping-checker\brawlhalla-ping-checker.csproj", "{BDFA311B-B114-42A8-800B-9A7B920A9B9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDFA311B-B114-42A8-800B-9A7B920A9B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDFA311B-B114-42A8-800B-9A7B920A9B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDFA311B-B114-42A8-800B-9A7B920A9B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDFA311B-B114-42A8-800B-9A7B920A9B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
