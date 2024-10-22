@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:brawlhalla_ping_checker"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <FontFamily x:Key="BrawlhallaFont">pack://application:,,,/Fonts/#LatinSlimBold</FontFamily>
     </Application.Resources>
 </Application>

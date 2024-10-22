@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:brawlhalla_ping_checker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#2ff0dd">
-        <TextBox Height="30" Background="#2ff0dd" TextAlignment="Center">Brawlhalla ping checker</TextBox>
+        Title="Brawlhalla ping checker" Height="450" Width="800">
+    <Grid x:Name="MainRoot" Background="#2ff0dd">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBox Grid.Column="1" Height="30" Background="#2ff0dd" TextAlignment="Center"
+                 FontFamily="{StaticResource BrawlhallaFont}" Text="Brawlhalla ping checker" FontSize="20">
+        </TextBox>
     </Grid>
 </Window>

@@ -7,33 +7,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f06c0b-3c1e-4e0a-b0de-5fbb2f838ac7" name="Changes" comment="first commit">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="92f06c0b-3c1e-4e0a-b0de-5fbb2f838ac7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.brawlhalla-ping-checker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.brawlhalla-ping-checker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brawlhalla-ping-checker/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/brawlhalla-ping-checker/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brawlhalla-ping-checker/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/brawlhalla-ping-checker/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brawlhalla-ping-checker/brawlhalla-ping-checker.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/brawlhalla-ping-checker/brawlhalla-ping-checker.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Hazardooo"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Hazardooo&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Hazardooo/brawlhalla-ping-checker.git",
-    "accountId": "bfd46906-bdf2-4274-97ab-209c61a76969"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Hazardooo/brawlhalla-ping-checker.git&quot;,
+    &quot;accountId&quot;: &quot;bfd46906-bdf2-4274-97ab-209c61a76969&quot;
   }
-}]]></component>
+}</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2nlPRjbYQwXWiFjxXTaehfZ126p" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -42,6 +48,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Project.brawlhalla-ping-checker.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
@@ -49,6 +56,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -80,7 +88,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1729544683889</updated>
-      <workItem from="1729544686085" duration="1473000" />
+      <workItem from="1729544686085" duration="2728000" />
+      <workItem from="1729632088659" duration="3969000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -90,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729546677153</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="upd .gitignore">
+      <option name="closed" value="true" />
+      <created>1729546758143</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729546758143</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,6 +118,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="upd .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd .gitignore" />
   </component>
 </project>
