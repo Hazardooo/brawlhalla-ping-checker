@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:brawlhalla_ping_checker"
         mc:Ignorable="d"
-        Title="Brawlhalla ping checker" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Brawlhalla ping checker" Height="450" Width="800" ResizeMode="NoResize" Icon="/desktop128.png">
     <Window.Resources>
         <Style x:Key="ServerButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="FontFamily" Value="{DynamicResource BrawlhallaFont}" />

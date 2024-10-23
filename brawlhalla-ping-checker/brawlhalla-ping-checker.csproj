@@ -10,7 +10,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Resource Include="Fonts\LatinSlimBold.ttf"/>
+      <None Remove="desktop128.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Resource Include="desktop128.png" />
+        <Resource Include="Fonts\LatinSlimBold.ttf" />
     </ItemGroup>
 
 </Project>
