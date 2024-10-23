@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:brawlhalla_ping_checker"
         mc:Ignorable="d"
-        Title="Brawlhalla ping checker" Height="450" Width="800">
-    <Grid x:Name="MainRoot" Background="#2ff0dd">
+        Title="Brawlhalla ping checker" Height="450" Width="800" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="ServerButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="{DynamicResource BrawlhallaFont}" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Background" Value="#0d2b44" />
+            <Setter Property="Foreground" Value="#30f1dd" />
+            <Setter Property="BorderBrush" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1a7980"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+    </Window.Resources>
+
+    <Grid x:Name="MainRoot" Background="#0d2b44">
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
@@ -18,16 +46,19 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBox Background="#2ff0dd"
-                 FontFamily="{StaticResource BrawlhallaFont}" Text="Brawlhalla ping checker" FontSize="30" FontWeight="Bold" Grid.ColumnSpan="3" TextAlignment="Center" Height="50"/>
-        <Button Grid.Column="0" Grid.Row=" 1" FontFamily="{DynamicResource BrawlhallaFont}" FontSize="20" FontWeight="Bold" Width="200" Height="50">US-E</Button>
-        <Button Grid.Column="1" Grid.Row=" 1" FontFamily="{DynamicResource BrawlhallaFont}" FontSize="20" FontWeight="Bold" Width="200" Height="50">US-W</Button>
-        <Button Grid.Column="2" Grid.Row=" 1" FontFamily="{DynamicResource BrawlhallaFont}" FontSize="20" FontWeight="Bold" Width="200" Height="50">EU</Button>
-        <Button Grid.Column="0" Grid.Row=" 2" FontFamily="{DynamicResource BrawlhallaFont}" FontSize="20" FontWeight="Bold" Width="200" Height="50">SEA</Button>
-        <Button Grid.Column="1" Grid.Row=" 2" FontFamily="{DynamicResource BrawlhallaFont}" FontSize="20" FontWeight="Bold" Width="200" Height="50">AUS</Button>
-        <Button Grid.Column="2" Grid.Row=" 2" FontFamily="{DynamicResource BrawlhallaFont}" FontSize="20" FontWeight="Bold" Width="200" Height="50">BRAZIL</Button>
-        <Button Grid.Column="0" Grid.Row=" 3" FontFamily="{DynamicResource BrawlhallaFont}" FontSize="20" FontWeight="Bold" Width="200" Height="50">JAPAN</Button>
-        <Button Grid.Column="1" Grid.Row=" 3" FontFamily="{DynamicResource BrawlhallaFont}" FontSize="20" FontWeight="Bold" Width="200" Height="50">MIDDLE EAST</Button>
-        <Button Grid.Column="2" Grid.Row=" 3" FontFamily="{DynamicResource BrawlhallaFont}" FontSize="20" FontWeight="Bold" Width="200" Height="50">SOUTHERN AFRICA</Button>
+
+        <Label Background="{x:Null}"
+       FontFamily="{StaticResource BrawlhallaFont}" Content="BRAWLHALLA PING CHECKER"
+       FontSize="30" FontWeight="Bold" Foreground="#30f1dd" Grid.ColumnSpan="3" HorizontalContentAlignment="Center"
+       VerticalContentAlignment="Center" Height="50" BorderBrush="{x:Null}" />
+        <Button Grid.Column="0" Grid.Row="1" Content="US-E" Style="{StaticResource ServerButtonStyle}" />
+        <Button Grid.Column="1" Grid.Row="1" Content="US-W" Style="{StaticResource ServerButtonStyle}" />
+        <Button Grid.Column="2" Grid.Row="1" Content="EU" Style="{StaticResource ServerButtonStyle}" />
+        <Button Grid.Column="0" Grid.Row="2" Content="SEA" Style="{StaticResource ServerButtonStyle}" />
+        <Button Grid.Column="1" Grid.Row="2" Content="AUS" Style="{StaticResource ServerButtonStyle}" />
+        <Button Grid.Column="2" Grid.Row="2" Content="BRAZIL" Style="{StaticResource ServerButtonStyle}" />
+        <Button Grid.Column="0" Grid.Row="3" Content="JAPAN" Style="{StaticResource ServerButtonStyle}" />
+        <Button Grid.Column="1" Grid.Row="3" Content="MIDDLE EAST" Style="{StaticResource ServerButtonStyle}" />
+        <Button Grid.Column="2" Grid.Row="3" Content="SOUTHERN AFRICA" Style="{StaticResource ServerButtonStyle}" />
     </Grid>
 </Window>
