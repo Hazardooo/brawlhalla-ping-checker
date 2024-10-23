@@ -51,14 +51,14 @@
        FontFamily="{StaticResource BrawlhallaFont}" Content="BRAWLHALLA PING CHECKER"
        FontSize="30" FontWeight="Bold" Foreground="#30f1dd" Grid.ColumnSpan="3" HorizontalContentAlignment="Center"
        VerticalContentAlignment="Center" Height="50" BorderBrush="{x:Null}" />
-        <Button Grid.Column="0" Grid.Row="1" Content="US-E" Style="{StaticResource ServerButtonStyle}" />
-        <Button Grid.Column="1" Grid.Row="1" Content="US-W" Style="{StaticResource ServerButtonStyle}" />
-        <Button Grid.Column="2" Grid.Row="1" Content="EU" Style="{StaticResource ServerButtonStyle}" />
-        <Button Grid.Column="0" Grid.Row="2" Content="SEA" Style="{StaticResource ServerButtonStyle}" />
-        <Button Grid.Column="1" Grid.Row="2" Content="AUS" Style="{StaticResource ServerButtonStyle}" />
-        <Button Grid.Column="2" Grid.Row="2" Content="BRAZIL" Style="{StaticResource ServerButtonStyle}" />
-        <Button Grid.Column="0" Grid.Row="3" Content="JAPAN" Style="{StaticResource ServerButtonStyle}" />
-        <Button Grid.Column="1" Grid.Row="3" Content="MIDDLE EAST" Style="{StaticResource ServerButtonStyle}" />
-        <Button Grid.Column="2" Grid.Row="3" Content="SOUTHERN AFRICA" Style="{StaticResource ServerButtonStyle}" />
+        <Button Grid.Column="0" Grid.Row="1" Content="US-E" Style="{StaticResource ServerButtonStyle}" Click="OnServerButtonClick" />
+        <Button Grid.Column="1" Grid.Row="1" Content="US-W" Style="{StaticResource ServerButtonStyle}" Click="OnServerButtonClick" />
+        <Button Grid.Column="2" Grid.Row="1" Content="EU" Style="{StaticResource ServerButtonStyle}" Click="OnServerButtonClick" />
+        <Button Grid.Column="0" Grid.Row="2" Content="SEA" Style="{StaticResource ServerButtonStyle}" Click="OnServerButtonClick" />
+        <Button Grid.Column="1" Grid.Row="2" Content="AUS" Style="{StaticResource ServerButtonStyle}" Click="OnServerButtonClick" />
+        <Button Grid.Column="2" Grid.Row="2" Content="BRAZIL" Style="{StaticResource ServerButtonStyle}" Click="OnServerButtonClick" />
+        <Button Grid.Column="0" Grid.Row="3" Content="JAPAN" Style="{StaticResource ServerButtonStyle}" Click="OnServerButtonClick" />
+        <Button Grid.Column="1" Grid.Row="3" Content="MIDDLE EAST" Style="{StaticResource ServerButtonStyle}" Click="OnServerButtonClick" />
+        <Button Grid.Column="2" Grid.Row="3" Content="SOUTHERN AFRICA" Style="{StaticResource ServerButtonStyle}" Click="OnServerButtonClick" />
     </Grid>
 </Window>
