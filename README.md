@@ -5,6 +5,8 @@
 
 **Brawlhalla Ping Checker** is a portable desktop application for Windows that allows you to instantly check your ping to **Brawlhalla** game servers. Instead of using the command line and typing commands, you can simply press a button corresponding to the desired server to check your ping.
 
+![desktop512](https://github.com/user-attachments/assets/dc7c330b-89ba-4f1b-a3e7-ab5f35ff50b3)
+
 ## Main Features
 
 - Quick ping check to **Brawlhalla** game servers.
