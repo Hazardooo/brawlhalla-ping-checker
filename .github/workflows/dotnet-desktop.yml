@@ -32,7 +32,7 @@ jobs:
 
     - name: Copy Published Files
       run: |
-        ls
+        ls brawlhalla-ping-checker\bin\Release\net8.0-windows\publish\win-x64\
         xcopy /s /y "brawlhalla-ping-checker\bin\Release\net8.0-windows\publish\win-x64\brawlhalla-ping-checker.exe" ".\release"
       
     - name: Upload Release Artifact
