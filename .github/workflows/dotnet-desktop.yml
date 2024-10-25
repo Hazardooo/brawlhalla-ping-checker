@@ -30,32 +30,23 @@ jobs:
     - name: Publish the project
       run: dotnet publish -r win-x64 -p:PublishSingleFile=true --self-contained false
 
-    - name: Create Release Directory
-      run: mkdir release
-
-    - name: Copy Published Files
-      run: |
-        ls \a\brawlhalla-ping-checker\brawlhalla-ping-checker\brawlhalla-ping-checker\bin\Release\net8.0-windows\win-x64\publish
-        xcopy /s /y "\a\brawlhalla-ping-checker\brawlhalla-ping-checker\brawlhalla-ping-checker\bin\Release\net8.0-windows\win-x64\publish\brawlhalla-ping-checker.exe" ".\release"
-      
-    - name: Upload Release Artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: brawlhalla-ping-checker
-        path: release/
-
-  release:
-    needs: build
-    runs-on: windows-latest
-    steps:
-    - name: Download Release Artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: brawlhalla-ping-checker
-
-    - name: Create GitHub Release
-      uses: softprops/action-gh-release@v1
-      with:
-        files: release/**
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v1.0.0
+        release_name: "Release v1.0.0"
+        draft: false
+        prerelease: true
+
+    - name: Upload to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: \a\brawlhalla-ping-checker\brawlhalla-ping-checker\brawlhalla-ping-checker\bin\Release\net8.0-windows\win-x64\publish\brawlhalla-ping-checker.exe
+        asset_name: brawlhalla-ping-checker.exe
+        asset_content_type: application/octet-stream
