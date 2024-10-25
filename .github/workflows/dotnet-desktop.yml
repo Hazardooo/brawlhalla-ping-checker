@@ -28,14 +28,14 @@ jobs:
       run: dotnet build --configuration Release
 
     - name: Publish the project
-      run: dotnet publish -c Release -r win-x64 --self-contained
+      run: dotnet publish -r win-x64 -p:PublishSingleFile=true --self-contained false
 
     - name: Create Release Directory
       run: mkdir release
 
     - name: Copy Published Files
       run: |
-        ls \a\brawlhalla-ping-checker\brawlhalla-ping-checker\brawlhalla-ping-checker\bin\Release\net8.0-windows\win-x64\
+        ls \a\brawlhalla-ping-checker\brawlhalla-ping-checker\brawlhalla-ping-checker\bin\Release\net8.0-windows\win-x64\publish
 
   # xcopy /s /y "brawlhalla-ping-checker\bin\Release\net8.0-windows\publish\win-x64\brawlhalla-ping-checker.exe" ".\release"
       
