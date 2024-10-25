@@ -36,27 +36,26 @@ jobs:
     - name: Copy Published Files
       run: |
         ls \a\brawlhalla-ping-checker\brawlhalla-ping-checker\brawlhalla-ping-checker\bin\Release\net8.0-windows\win-x64\publish
-
-  # xcopy /s /y "brawlhalla-ping-checker\bin\Release\net8.0-windows\publish\win-x64\brawlhalla-ping-checker.exe" ".\release"
+        xcopy /s /y "\a\brawlhalla-ping-checker\brawlhalla-ping-checker\brawlhalla-ping-checker\bin\Release\net8.0-windows\win-x64\publish\brawlhalla-ping-checker.exe" ".\release"
       
-  #   - name: Upload Release Artifact
-  #     uses: actions/upload-artifact@v3
-  #     with:
-  #       name: brawlhalla-ping-checker
-  #       path: release/
+    - name: Upload Release Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: brawlhalla-ping-checker
+        path: release/
 
-  # release:
-  #   needs: build
-  #   runs-on: windows-latest
-  #   steps:
-  #   - name: Download Release Artifact
-  #     uses: actions/download-artifact@v3
-  #     with:
-  #       name: brawlhalla-ping-checker
+  release:
+    needs: build
+    runs-on: windows-latest
+    steps:
+    - name: Download Release Artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: brawlhalla-ping-checker
 
-  #   - name: Create GitHub Release
-  #     uses: softprops/action-gh-release@v1
-  #     with:
-  #       files: release/**
-  #     env:
-  #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: release/**
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
