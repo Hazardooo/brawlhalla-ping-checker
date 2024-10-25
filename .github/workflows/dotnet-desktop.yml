@@ -30,14 +30,32 @@ jobs:
     - name: Publish the project
       run: dotnet publish -r win-x64 -p:PublishSingleFile=true --self-contained false
 
+    - name: Get latest tag
+      id: get_tag
+      run: |
+        latest_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+        echo "Latest tag: $latest_tag"
+        echo "::set-output name=latest_tag::$latest_tag"
+
+    - name: Bump version
+      id: bump_version
+      run: |
+        latest_tag=${{ steps.get_tag.outputs.latest_tag }}
+        # Split the version by dots
+        IFS='.' read -r -a parts <<< "${latest_tag#v}"
+        # Increment the patch version
+        new_version="${parts[0]}.${parts[1]}.$((parts[2] + 1))v"
+        echo "New version: v$new_version"
+        echo "::set-output name=new_version::v$new_version"
+
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: v1.0.0
-        release_name: "Release v1.0.0"
+        tag_name: ${{ steps.bump_version.outputs.new_version }}
+        release_name: "Release ${{ steps.bump_version.outputs.new_version }}"
         draft: false
         prerelease: true
 
