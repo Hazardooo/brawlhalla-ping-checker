@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: windows-latest
@@ -32,7 +35,7 @@ jobs:
 
     - name: Copy Published Files
       run: |
-        ls \a\brawlhalla-ping-checker\brawlhalla-ping-checker\brawlhalla-ping-checker\bin\Release\net8.0-windows\publish\win-x64\
+        ls \a\brawlhalla-ping-checker\brawlhalla-ping-checker\brawlhalla-ping-checker\bin\Release\
 
   # xcopy /s /y "brawlhalla-ping-checker\bin\Release\net8.0-windows\publish\win-x64\brawlhalla-ping-checker.exe" ".\release"
       
