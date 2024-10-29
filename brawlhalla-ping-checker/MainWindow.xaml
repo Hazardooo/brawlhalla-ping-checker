@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:brawlhalla_ping_checker"
         mc:Ignorable="d"
-        Title="Brawlhalla ping checker" Height="450" Width="800" ResizeMode="NoResize" Icon="/desktop128.png">
+        Title="Brawlhalla ping checker" Height="450" Width="700" ResizeMode="NoResize" Icon="/desktop128.png">
     <Window.Resources>
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="Background" Value="{x:Null}" />
+            <Setter Property="FontFamily" Value="{StaticResource BrawlhallaFont}" />
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="#30f1dd" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="BorderBrush" Value="{x:Null}" />
+        </Style>
         <Style x:Key="ServerButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="FontFamily" Value="{DynamicResource BrawlhallaFont}" />
             <Setter Property="FontSize" Value="20" />
@@ -31,11 +42,24 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        
+        <Style x:Key="PingLabelStyle" TargetType="Label">
+            <Setter Property="Background" Value="{x:Null}" />
+            <Setter Property="FontFamily" Value="{StaticResource BrawlhallaFont}" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="#30f1dd" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="BorderBrush" Value="{x:Null}" />
+        </Style>
     </Window.Resources>
 
     <Grid x:Name="MainRoot" Background="#0d2b44">
         <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
@@ -47,10 +71,9 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Label Background="{x:Null}"
-       FontFamily="{StaticResource BrawlhallaFont}" Content="BRAWLHALLA PING CHECKER"
-       FontSize="30" FontWeight="Bold" Foreground="#30f1dd" Grid.ColumnSpan="3" HorizontalContentAlignment="Center"
-       VerticalContentAlignment="Center" Height="50" BorderBrush="{x:Null}" />
+        <Label Style="{StaticResource LabelStyle}"
+       Content="BRAWLHALLA PING CHECKER" Grid.ColumnSpan="3"/>
+
         <Button Grid.Column="0" Grid.Row="1" Content="US-E" Style="{StaticResource ServerButtonStyle}" Click="OnServerButtonClick" />
         <Button Grid.Column="1" Grid.Row="1" Content="US-W" Style="{StaticResource ServerButtonStyle}" Click="OnServerButtonClick" />
         <Button Grid.Column="2" Grid.Row="1" Content="EU" Style="{StaticResource ServerButtonStyle}" Click="OnServerButtonClick" />
@@ -60,5 +83,23 @@
         <Button Grid.Column="0" Grid.Row="3" Content="JAPAN" Style="{StaticResource ServerButtonStyle}" Click="OnServerButtonClick" />
         <Button Grid.Column="1" Grid.Row="3" Content="MIDDLE EAST" Style="{StaticResource ServerButtonStyle}" Click="OnServerButtonClick" />
         <Button Grid.Column="2" Grid.Row="3" Content="SOUTHERN AFRICA" Style="{StaticResource ServerButtonStyle}" Click="OnServerButtonClick" />
+
+        <Label Name="ResultLabel" Style="{StaticResource LabelStyle}"
+       Content="RESULT:" Grid.ColumnSpan="3" Grid.Row="4" />
+
+        <Label Name="PingSent" Style="{StaticResource PingLabelStyle}" 
+       Content="Sent..." Grid.Column="0" Grid.Row="5" />
+        <Label Name="PingReceived" Style="{StaticResource PingLabelStyle}" 
+       Content="Received..." Grid.Column="1" Grid.Row="5" />
+        <Label Name="PingLost" Style="{StaticResource PingLabelStyle}" 
+       Content="Lost..." Grid.Column="2" Grid.Row="5" />
+        <Label Name="MinMs" Style="{StaticResource PingLabelStyle}" 
+       Content="Min ms..." Grid.Column="0" Grid.Row="6" />
+        <Label Name="MaxMs" Style="{StaticResource PingLabelStyle}" 
+       Content="Max ms..." Grid.Column="1" Grid.Row="6" />
+        <Label Name="AvgMs" Style="{StaticResource PingLabelStyle}" 
+       Content="Avg ms..." Grid.Column="2" Grid.Row="6" />
+
+
     </Grid>
 </Window>

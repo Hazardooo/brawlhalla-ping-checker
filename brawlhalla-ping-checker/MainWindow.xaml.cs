@@ -28,7 +28,6 @@ namespace brawlhalla_ping_checker
 
         private void OnServerButtonClick(object sender, RoutedEventArgs e)
         {
-            // Получаем текст кнопки, чтобы определить, какой сервер нужно пинговать
             var button = sender as Button;
             if (button != null)
             {
@@ -41,26 +40,45 @@ namespace brawlhalla_ping_checker
             }
         }
 
-        private void PingServer(string serverAddress)
+        private async void PingServer(string serverAddress)
         {
+            ResultLabel.Content = $"RESULT";
+            int successCount = 0;
+            long totalPingTime = 0;
+            long minPing = long.MaxValue;
+            long maxPing = long.MinValue;
+
             try
             {
                 using (Ping ping = new Ping())
                 {
-                    PingReply reply = ping.Send(serverAddress);
-                    if (reply.Status == IPStatus.Success)
+                    for (int i = 0; i < 100; i++)
                     {
-                        MessageBox.Show($"Ping to {serverAddress} successful.\nTime: {reply.RoundtripTime} ms", "Ping Result", MessageBoxButton.OK, MessageBoxImage.Information);
+                        PingReply reply = await ping.SendPingAsync(serverAddress, 1000);
+                        PingSent.Content = i+1;
+                        if (reply.Status == IPStatus.Success)
+                        {
+                            long pingTime = reply.RoundtripTime;
+                            totalPingTime += pingTime;
+                            minPing = Math.Min(minPing, pingTime);
+                            maxPing = Math.Max(maxPing, pingTime);
+                            successCount++;
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show($"Ping to {serverAddress} failed.", "Ping Result", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
+
+                    double avgPing = successCount > 0 ? (double)totalPingTime / successCount : 0;
+
+                    PingReceived.Content = successCount;
+                    PingLost.Content = (100 - successCount) * 100 / 100;
+                    MinMs.Content = minPing;
+                    MaxMs.Content = maxPing;
+                    AvgMs.Content = avgPing;
+                    ResultLabel.Content = $"RESULT: Done!";
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error pinging server: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                ResultLabel.Content = $"RESULT: Error pinging server: {ex.Message}";
             }
         }
     }
